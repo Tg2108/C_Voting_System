@@ -3,7 +3,7 @@
 int x,nic;
 
 int main(){
-<<<<<<< HEAD
+<<<<<<< HEADgit 
     printf("Hellow");
     return 0;
 =======

@@ -91,4 +91,8 @@ void results(){
 int main(){
     results();
     return 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6b1491d1c479d5f9010f7ae0d6ee4d9fde132c86

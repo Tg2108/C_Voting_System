@@ -3,10 +3,8 @@
 int x,nic;
 
 int main(){
-<<<<<<< HEADgit 
     printf("Hellow");
     return 0;
-=======
 printf("\t1.Candidates\n");
 printf("\t2.Voters\n");
 printf("\t3.Political Party\n");
@@ -46,7 +44,6 @@ switch(x){
 }
 
 
->>>>>>> bab08f345678624868fc3eaaa509a3e46df78016
 }
 
 //#include "registertion.c"

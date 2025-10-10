@@ -16,7 +16,7 @@ int main()
 
     switch(Q){
         case 1:
-            char W,R,T,Y,I,O,P,L,E[12];
+            char W,R,T,Y,I,O,P,L,E[12],K,J;
             int U;
 
             printf("\n\t\t\t\t\t\t####ENTER YOUR DATAILS HERE ####\n\n");
@@ -54,6 +54,12 @@ int main()
 
             printf("\n\t\tYOUR ADDRESS       :");
             scanf(" %s",&L);
+
+            printf("\n\t\tUSERNAME  :");
+            scanf(" %S",&K);
+
+            printf("\n\t\tPASSWORD  :");
+            scanf("%s",&J);
             
             printf("\t\t\t\t...........................................................\n\n");
 
@@ -64,7 +70,7 @@ int main()
             break;
 
         case 2:
-            char H,F,D,A,Z;
+            char H,F,D,A,Z,X,C;
             int G,S;
 
             printf("\n\t\t\t\t\t\t####ENTER YOUR DATAILS HERE ####\n\n");
@@ -89,6 +95,12 @@ int main()
 
             printf("\n\t\tYOUR ADDRESS       :");
             scanf(" %s",&Z);
+            
+            printf("\n\t\tUSERNAME  :");
+            scanf(" %S",&X);
+
+            printf("\n\t\tPASSWORD  :");
+            scanf("%s",&C);
 
             printf("\t\t\t\t...........................................................\n\n");
 
@@ -128,18 +140,23 @@ int main()
             break ;
 
         case 4:
+            char USER,PASS;
             printf("\n\t\t\t\t\t\t####ENTER YOUR DATAILS HERE ####\n\n");
-            printf("\t\tENTER YOUR FULL NAME             :");
-            scanf(" %S",&W);
 
-            printf("\n\t\tYOUR NATIONAL IDENTY CARD NUMBER :");
-            scanf(" %d",&E);
+            printf("\n\t\tUSERNAME  :");
+            scanf(" %S",&USER);
 
-            printf("\n\tYOUR DATE OF BIRTH :");
-            scanf(" %s",&R);
+            printf("\n\t\tPASSWORD  :");
+            scanf("%s",&PASS);
 
-            printf("\n\tYOUR G-mail :");
-            scanf(" %s",&T);
+            printf("\t\t\t\t...........................................................\n\n");
+
+            printf("\t\t\t\t\t\tTHANK YOU FOR YOUR COOPARION !!!\n");
+
+            printf("\t\t\t\t...........................................................\n\n");
+
+            break;
+
     }
 
 

@@ -1,44 +1,145 @@
 #include<stdio.h>
+#include<math.h>
 int main()
 {  
-    int Q; //CHOISE YOUR TYPE
+    int Q; // Q is a type variable 
 
-    printf("\n\n\t\t\t\t####WELLCOME TO PARLIMENT ELECTION SYSTREM 2025####\n\n");
-    printf("\t\t1.CANDIDATES\n");
-    printf("\t\t2.VOTERS\n");
-    printf("\t\t3.POLLITICAL PARTYS\n");
-    printf("\t\t4.LOGIN\n\n");
-    printf("\tENTER YOUR CHOISE :");
+    printf("\n\n\n\n\n\t\t\t\t----WELLCOME TO PARLIYAMENT ELECTION VOTING SYSTEM 2025----\n");
+    printf("\t\t\t\t...........................................................\n\n");
+    printf("\t\t\t\t||\t\t\t1.CANDIDATES \t\t\t||\n");
+    printf("\t\t\t\t||\t\t\t2.VOTERS     \t\t\t||\n");
+    printf("\t\t\t\t||\t\t\t3.POLLITICAL PARTYS\t\t||\n");
+    printf("\t\t\t\t||\t\t\t4.LOGIN      \t\t\t||\n\n");
+    printf("\t\t\t\t...........................................................\n\n");
+    printf("\t\t\t\tENTER YOUR CHOISE :");
     scanf("%d",&Q);
 
     switch(Q){
         case 1:
-            char E,R,T,Y,I,O,P,L,K,J;
-            int W,U;
-            printf("\n\nENTER YOUR DATAILS HERE #######\n\n");
-            printf("\tYOUR NAME :");
-            scanf(" %d",&W);
-            printf("\n\tYOUR NATIONAL IDENTY CARD NUMBER :");
-            scanf(" %s",&E);
-            printf("\n\tYOUR DATE OF BIRTH :");
+            char W,R,T,Y,I,O,P,L,E[12];
+            int U;
+
+            printf("\n\t\t\t\t\t\t####ENTER YOUR DATAILS HERE ####\n\n");
+
+            printf("\t\tENTER YOUR FULL NAME             :");
+            scanf(" %S",&W);
+
+            printf("\n\t\tYOUR NATIONAL IDENTY CARD NUMBER :");
+            scanf(" %d",&E);
+            if(E<=12){
+                printf("its valid id");
+            }else{
+        
+                    printf("\t\tits invalid number");
+
+                     printf("\n\t\tYOUR NATIONAL IDENTY CARD NUMBER :");
+                     scanf(" %d",&E);
+                }
+            
+
+            printf("\n\t\tYOUR DATE OF BIRTH :");
             scanf(" %s",&R);
-            printf("\n\tYOUR G-mail :");
+
+            printf("\n\t\tYOUR G-mail        :");
             scanf(" %s",&T);
-            printf("\n\tYOUR PARTY NAME :");
+
+            printf("\n\t\tYOUR PARTY NAME    :");
             scanf(" %s",&Y);
-            printf("\n\tYOUR ZIP CODE :");
+
+            printf("\n\t\tYOUR ZIP CODE      :");
             scanf(" %d",&U);
-            printf("\n\tYOUR DISTRICT :");
+
+            printf("\n\t\tYOUR DISTRICT      :");
             scanf(" %s",&P);
-            printf("\n\tYOUR ADDRESS :");
+
+            printf("\n\t\tYOUR ADDRESS       :");
             scanf(" %s",&L);
-            printf("\n\tENTER YOUR USERNAME :");
-            scanf(" %s",&K);
-            printf("ENTER YOUR PASSWORD :");
-            scanf(" %s",&J);
+            
+            printf("\t\t\t\t...........................................................\n\n");
+
+            printf("\t\t\t\t\t\tTHANK YOU FOR YOUR COOPARION !!!\n");
+
+            printf("\t\t\t\t...........................................................\n\n");
+
             break;
 
+        case 2:
+            char H,F,D,A,Z;
+            int G,S;
 
+            printf("\n\t\t\t\t\t\t####ENTER YOUR DATAILS HERE ####\n\n");
+
+            printf("\t\tENTER YOUR FULL NAME             :");
+            scanf(" %S",&H);
+
+            printf("\n\t\tYOUR NATIONAL IDENTY CARD NUMBER :");
+            scanf(" %d",&G);
+
+            printf("\n\t\tYOUR DATE OF BIRTH :");
+            scanf(" %s",&F);
+
+            printf("\n\t\tYOUR G-mail        :");
+            scanf(" %s",&D);
+
+            printf("\n\t\tYOUR ZIP CODE      :");
+            scanf(" %d",&S);
+
+            printf("\n\t\tYOUR DISTRICT      :");
+            scanf(" %s",&A);
+
+            printf("\n\t\tYOUR ADDRESS       :");
+            scanf(" %s",&Z);
+
+            printf("\t\t\t\t...........................................................\n\n");
+
+            printf("\t\t\t\t\t\tTHANK YOU FOR YOUR COOPARION !!!\n");
+
+            printf("\t\t\t\t...........................................................\n\n");
+
+            break;
+
+        case 3:
+            char V,B,N,M,ID;
+        
+            printf("\n\t\t\t\t\t\t#### ENTER YOUR DATAILS HERE ####\n\n");
+
+            printf("\t\tENTER YOUR POLITICAL PARTY NAME  :");
+            scanf(" %S",&V);
+
+            printf("\n\t\t\t\t  PLEASE ENTER THIS AREA TO YOUR PARTY CHIRMEN DETAILES");
+            printf("\n\t\tNAME :");
+            scanf("%s",&B);
+            printf("\n\t\tIDENTITY CARD NUMBER :");
+            scanf("%s",&N);
+
+            printf("\n\t\t\t\t  PLEASE ENTER THIS AREA TO YOUR PARTY SECRATERY DETAILES");
+            printf("\n\t\tNAME :");
+            scanf("%s",&M);
+            printf("\n\t\tIDENTITY CARD NUMBER :");
+            scanf("%s",&ID);
+
+            printf("\t\t\t\t...........................................................\n\n");
+
+            printf("\t\t\t\t\t\tTHANK YOU FOR YOUR COOPARION !!!\n");
+
+            printf("\t\t\t\t...........................................................\n\n");
+            
+
+            break ;
+
+        case 4:
+            printf("\n\t\t\t\t\t\t####ENTER YOUR DATAILS HERE ####\n\n");
+            printf("\t\tENTER YOUR FULL NAME             :");
+            scanf(" %S",&W);
+
+            printf("\n\t\tYOUR NATIONAL IDENTY CARD NUMBER :");
+            scanf(" %d",&E);
+
+            printf("\n\tYOUR DATE OF BIRTH :");
+            scanf(" %s",&R);
+
+            printf("\n\tYOUR G-mail :");
+            scanf(" %s",&T);
     }
 
 

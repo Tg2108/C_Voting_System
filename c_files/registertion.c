@@ -1,52 +1,66 @@
 #include<stdio.h>
 #include<math.h>
 #include<string.h>
+#include<stdlib.h>
 
 int main(){  
    
-
-    char W[100],R[50],T[50],Y[50],I[50],O[50],P[50],E[50],L[50],K[50],J[50],H[50],F[50],D[50],A[50],Z[50],X[50],C[50],V[50],B[50],N[50],M[50],ID[50],USER[50],PASS[50];
+    char W[100],R[50],T[50],Y[50],I[50],O[50],P[50],E[50],L[50],K[50],J[50],H[50],F[50],D[50];
+    char A[50],Z[50],X[50],C[50],V[50],B[50],N[50],M[50],ID[50],USER[50],PASS[50];
     int U,Q,G,S,rl; 
     
-    printf("\n\n\n\n\n\t\t\t\t---- WELLCOME TO PARLIYAMENT ELECTION VOTING SYSTEM 2025 ----\n");
+    printf("\n\n\n\n\n\t\t\t\t---- WELLCOME TO PARLIAMENT ELECTION VOTING SYSTEM 2025 ----\n");
     printf("\t\t\t\t...............................................................\n\n");
 
-    printf("\t\t\t\t\t1.Registertion\n");
-    printf("\t\t\t\t\t2.Loging\n\n\n");
+    printf("\t\t\t\t||\t\t\t1.Registration\t\t\t     ||\n");
+    printf("\t\t\t\t||\t\t\t2.Loging\t\t\t     ||\n\n");
 
-    printf("\t\t\t\tENTER YOUR CHOISE :");
+    printf("\t\t\t\t...............................................................\n\n");
+
+    printf("\t\t\t\tPLEASE ENTER YOUR CHOISE :");
     scanf("%d",&rl);
 
+    
     FILE *candi1;
     FILE *candi2;
-     candi1=fopen("C_Details.txt","a");
-            if (candi1== NULL) {
-                printf("Error opening file for writing!\n");
-                return 1;
-            }
 
-            candi2=fopen("C_hide.txt","a");
-            if (candi2== NULL) {
-                printf("Error opening file for writing!\n");
-                return 1;
-            }
+    candi1=fopen("C_Details.txt","a");
+        if (candi1== NULL) {
+            printf("Error opening file for writing!\n");
+            return 1;
+        }
+
+    candi2=fopen("C_hide.txt","a");
+        if (candi2== NULL) {
+            printf("Error opening file for writing!\n");
+            return 1;
+        }
             
     switch(rl){
         case 1: 
+            system("cls");//close the up interface
 
-            printf("\n\t\t\t\t\t1.CANDIDATES\n");
-            printf("\t\t\t\t\t2.VOTERS\n");
-            printf("\t\t\t\t\t3.POLLITICAL PARTYS\n\n");
+            printf("\n\n\n\n\t\t\t\tWELLCOME TO REGISTRATION OF PARLIAMENT ELECTION VOTING SYSTEM");
+            printf("\n\t\t\t\t...............................................................\n\n");
+
+            printf("\n\t\t\t\t\t\t\t1.CANDIDATES\n");
+            printf("\t\t\t\t\t\t\t2.VOTERS\n");
+            printf("\t\t\t\t\t\t\t3.POLLITICAL PARTIES\n\n");
+
+            printf("\t\t\t\t...............................................................\n\n");
+
             printf("\t\t\t\tENTER YOUR CHOISE :");
             scanf("%d",&Q);
 
     switch(Q){
        
-        
         case 1:
-            
-            printf("\n\t\t\t\t\t\t####ENTER YOUR DATAILS HERE ####\n\n");
-        
+            system("cls");
+
+            printf("\t\t\t\t...............................................................\n\n");
+            printf("\n\t\t\t\t\t#### ENTER YOUR CANDIDATES DATAILS HERE ####\n\n");
+            printf("\t\t\t\t...............................................................\n\n");
+
             printf("\t\tENTER YOUR FULL NAME             :");
             scanf("%s",W);
             fprintf(candi1,"%s",W);
@@ -55,18 +69,12 @@ int main(){
             scanf("%s",E);
             fprintf(candi1,"\t%s",E);            
             
-            if(strlen(E)==12 ||strlen(E)==10){
-                //fprintf(fp1, "NIC: %s\n", E);
-
-            }else{
-        
-                    printf("\t\tits invalid number");
-
-                     printf("\n\t\tYOUR NATIONAL IDENTY CARD NUMBER :");
-                     scanf(" %s",&E);
+            if(strlen(E)!=12 ||strlen(E)!=9){
+                printf("\t\tIt is an invalid number. Please enter a 9/12 digit number.NOT need to enter 'x' or 'v'");
+                    printf("\n\t\tYOUR TRUE NATIONAL IDENTY CARD NUMBER :");
+                    scanf(" %s",&E);
                 }
-            
-
+        
             printf("\n\t\tYOUR DATE OF BIRTH :");
             scanf("%s",R);
             fprintf(candi1,"\t%s",R);

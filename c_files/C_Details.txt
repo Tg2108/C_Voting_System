@@ -1,0 +1,9 @@
+
+cd	"c:\Users\ASUS\OneDrive\Desktop\C	;	if	($?)	0	{	gcc
+cd	"c:\Users\ASUS\OneDrive\Desktop\C	;	if	($?)	0	{	gcc
+cd	"c:\Users\ASUS\OneDrive\Desktop\C	;	if	($?)	0	{	gcc
+cd	"c:\Users\ASUS\OneDrive\Desktop\C	;	if	($?)	0	{	gcc
+cd	"c:\Users\ASUS\OneDrive\Desktop\C	;	if	($?)	0	{	gcc
+cd	"c:\Users\ASUS\OneDrive\Desktop\C	;	if	($?)	0	{	gcc
+cd	"c:\Users\ASUS\OneDrive\Desktop\C	;	if	($?)	0	{	gcc
+cd	"c:\Users\ASUS\OneDrive\Desktop\C	;	if	($?)	0	{	gcc

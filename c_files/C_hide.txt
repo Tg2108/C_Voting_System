@@ -1,9 +1,12 @@
+ID_NUM,USER_NAME,PASSWORD
 
-"c:\Users\ASUS\OneDrive\Desktop\C	registertion.c	-o
-"c:\Users\ASUS\OneDrive\Desktop\C	registertion.c	-o
-"c:\Users\ASUS\OneDrive\Desktop\C	registertion.c	-o
-"c:\Users\ASUS\OneDrive\Desktop\C	registertion.c	-o
-"c:\Users\ASUS\OneDrive\Desktop\C	registertion.c	-o
-"c:\Users\ASUS\OneDrive\Desktop\C	registertion.c	-o
-"c:\Users\ASUS\OneDrive\Desktop\C	registertion.c	-o
-"c:\Users\ASUS\OneDrive\Desktop\C	registertion.c	-o
+200426902200	kavi	123645
+200426902222	254	25416
+125456987	145987	1452
+123654789	1542	1452
+123654789	"c:\Users\ASUS\OneDrive\Desktop\C	project\C_Voting_System\c_files\"
+123654789	cd	"c:\Users\ASUS\OneDrive\Desktop\C
+145236879	4	4
+145236987	cd	"c:\Users\ASUS\OneDrive\Desktop\C
+123654789
+012365478	cd	"c:\Users\ASUS\OneDrive\Desktop\C

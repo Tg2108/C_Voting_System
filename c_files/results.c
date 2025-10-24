@@ -1,862 +1,246 @@
-void sum(){
-    int count;
-    FILE *fp = fopen("sum.txt","r");
-    if(fp==NULL){
-        printf("error");
-    }else{
-        fscanf(fp,"%d",&count);
-        printf("\n\t\t\t\t\t\t\tTotal :- %d",count);
-        fclose(fp);
-    }
-}
-void sum1(){
-    int count;
-    FILE *fp = fopen("sum1.txt","r");
-    if(fp==NULL){
-        printf("error");
-    }else{
-        fscanf(fp,"%d",&count);
-        printf("\n\t\t\t\t\t\t\tTotal :- %d",count);
-        fclose(fp);
-    }
-}
-void sum2(){
-    int count;
-    FILE *fp = fopen("sum2.txt","r");
-    if(fp==NULL){
-        printf("error");
-    }else{
-        fscanf(fp,"%d",&count);
-        printf("\n\t\t\t\t\t\t\tTotal :- %d",count);
-        fclose(fp);
-    }
-}
+#include<stdio.h>
+#include<string.h>
 
+void partyone(){
+	
+	FILE *file;
+    char line[100];
+    char Word1[100];
+    char partyname[100];
+    int vote;
+    int Number = 1;
 
-void party1(){
-    FILE *fp = fopen("party1.txt","r");
-    if(fp == NULL){
-        perror("error");
-    }else{
-        int ch_code = '\0';
-        while((ch_code = fgetc(fp)) != EOF){
-            printf("%c",ch_code);
-
-        }
-    }
-    
-}
-
-void party2(){
-    FILE *fp = fopen("party2.txt","r");
-    if(fp == NULL){
-        perror("error");
-    }else{
-        int ch_code = '\0';
-        while((ch_code = fgetc(fp)) != EOF){
-            printf("%c",ch_code);
-
-        }
-    }
-    
-}
-
-void party3(){
-    FILE *fp = fopen("party3.txt","r");
-    if(fp == NULL){
-        perror("error");
-    }else{
-        int ch_code = '\0';
-        while((ch_code = fgetc(fp)) != EOF){
-            printf("%c",ch_code);
-
-        }
-    }
-    
-}
-
-void district1(){
-    FILE *fp = fopen("district1.txt","r");
-    if(fp == NULL){
-        perror("error");
-    }else{
-        int ch_code = '\0';
-        while((ch_code = fgetc(fp)) != EOF){
-            printf("%c",ch_code);
-
-        }
-    }
-    
-}
-
-void district2(){
-    FILE *fp = fopen("district2.txt","r");
-    if(fp == NULL){
-        perror("error");
-    }else{
-        int ch_code = '\0';
-        while((ch_code = fgetc(fp)) != EOF){
-            printf("%c",ch_code);
-
-        }
-    }
-    
-}
-
-void district3(){
-    FILE *fp = fopen("district3.txt","r");
-    if(fp == NULL){
-        perror("error");
-    }else{
-        int ch_code = '\0';
-        while((ch_code = fgetc(fp)) != EOF){
-            printf("%c",ch_code);
-
-        }
-    }
-    
-}
-
-void candidate1(){
-    FILE *fp = fopen("candidate1.txt","r");
-    if(fp == NULL){
-        perror("error");
-    }else{
-        int ch_code = '\0';
-        while((ch_code = fgetc(fp)) != EOF){
-            printf("%c",ch_code);
-
-        }
-    }
-    
-}
-
-void candidate2(){
-    FILE *fp = fopen("candidate2.txt","r");
-    if(fp == NULL){
-        perror("error");
-    }else{
-        int ch_code = '\0';
-        while((ch_code = fgetc(fp)) != EOF){
-            printf("%c",ch_code);
-
-        }
-    }
-    
-}
-
-void candidate3(){
-    FILE *fp = fopen("candidate3.txt","r");
-    if(fp == NULL){
-        perror("error");
-    }else{
-        int ch_code = '\0';
-        while((ch_code = fgetc(fp)) != EOF){
-            printf("%c",ch_code);
-
-        }
-    }
-    
-}
-
-void function(){
-    int count,count1,count2;
-    FILE *fp = fopen("sum.txt","r");
-    FILE *fp1 = fopen("sum1.txt","r");
-    FILE *fp2 = fopen("sum2.txt","r");
-    if(fp==NULL,fp1==NULL,fp2==NULL){
-        printf("error");
-    }else{
-        fscanf(fp,"%d",&count);
-        fscanf(fp1,"%d",&count1);
-        fscanf(fp2,"%d",&count2);
+    file = fopen("partyone.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file!\n");
         
-        if(count>count1){
-        	if(count>count2){
-        		printf("\t\t\t\t\t\t\tAnura is selected\n");//here reads candidate name file
-			}else{
-				printf("\t\t\t\t\t\t\tMahinda is selected\n");//here reads candidate name file
-			}
-		}else if(count1>count2){
-			printf("\t\t\t\t\t\t\tSajith is selected\n");//here reads candidate name file
-		}
-		
-		}
-		fclose(fp);
-		fclose(fp1);
-		fclose(fp2);
     }
-
-
-void results(){
-    char x,f;
-    int y;
-    printf("\t\t\t\t\t\t\t3.Results");
-    printf("\n\t\t\t\t\t\t-------------------------\n");
-    printf("\t\t\t\t\t\t\ta.");
-    party1();
-    printf("\n\t\t\t\t\t\t\tb.");
-    party2();
-    printf("\n\t\t\t\t\t\t\tc.");
-    party3();
-    
-    printf("\n\t\t\t\t\t\t\td.Back");
-    printf("\n\n");
-    printf("\t\t\t\t\t\tEnter Party Number: ");
-    scanf(" %c",&x);
-    printf("\t\t\t\t\t__________________________________________\n");
-    switch(x){
-        case 'a':
-            printf("\n\t\t\t\t\t\t\t");
-            party1();
-            printf("\n\t\t\t\t\t\t-------------------------\n");
-            printf("\t\t\t\t\t\t\t1.");
-            district1();
-            printf("\n\t\t\t\t\t\t\t2.");
-            district2();
-            printf("\n\t\t\t\t\t\t\t3.");
-            district3();
-            printf("\n\t\t\t\t\t\t\t4.back\n\n");
-            printf("\t\t\t\t\t\tEnter District: ");
-            scanf("%d",&y);
-            printf("\t\t\t\t\t__________________________________________\n");
-                switch(y){
-                    case 1:
-                        printf("\n\t\t\t\t\t\t\t");
-           				party1();
-           				printf("-");
-           				district1();
-            			printf("\n\t\t\t\t\t\t-------------------------\n");
-            			printf("\t\t\t\t\t\t\t1.");
-            			candidate1();
-            			printf("\n\t\t\t\t\t\t\t2.");
-            			candidate2();
-            			printf("\n\t\t\t\t\t\t\t3.");
-            			candidate3();
-            			printf("\n\t\t\t\t\t\t\t4.View eligible candidates.");
-            			printf("\n\t\t\t\t\t\t\t5.back\n\n");
-            			printf("\t\t\t\t\tEnter Candidate Number To Get Their Results: ");
-            			scanf("%d",&y);
-            			printf("\t\t\t\t\t__________________________________________\n");
-            			switch(y){
-                			case 1:
-                        		sum();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-								break;	
-                    		case 2:
-                        		sum1();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 3:
-                        		sum2();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 4:
-                    			function();
-                    			printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-								break;
-							case 5:
-                        		printf("goes to previous menu\n");
-                       			break;
-                    		default:
-                        		printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        		break;
-            				}		
-                        break;
-                    case 2:
-                        printf("\n\t\t\t\t\t\t\t");
-           				party1();
-           				printf("-");
-           				district2();
-            			printf("\n\t\t\t\t\t\t-------------------------\n");
-            			printf("\t\t\t\t\t\t\t1.");
-            			candidate1();
-            			printf("\n\t\t\t\t\t\t\t2.");
-            			candidate2();
-            			printf("\n\t\t\t\t\t\t\t3.");
-            			candidate3();
-            			printf("\n\t\t\t\t\t\t\t4.View eligible candidates.");
-            			printf("\n\t\t\t\t\t\t\t5.back\n\n");
-            			printf("\t\t\t\t\tEnter Candidate Number To Get Their Results: ");
-            			scanf("%d",&y);
-            			printf("\t\t\t\t\t__________________________________________\n");
-            			switch(y){
-                			case 1:
-                        		sum();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 2:
-                        		sum1();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 3:
-                        		sum2();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 4:
-								function();
-								printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-								break;
-							case 5:
-                        		printf("goes to previous menu\n");
-                       			break;
-                    		default:
-                        		printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        		break;
-            				};
-                        break;
-                    case 3:
-                        printf("\n\t\t\t\t\t\t\t");
-           				party1();
-           				printf("-");
-           				district3();
-            			printf("\n\t\t\t\t\t\t-------------------------\n");
-            			printf("\t\t\t\t\t\t\t1.");
-            			candidate1();
-            			printf("\n\t\t\t\t\t\t\t2.");
-            			candidate2();
-            			printf("\n\t\t\t\t\t\t\t3.");
-            			candidate3();
-            			printf("\n\t\t\t\t\t\t\t4.View eligible candidates.");
-            			printf("\n\t\t\t\t\t\t\t5.back\n\n");
-            			printf("\t\t\t\t\tEnter Candidate Number To Get Their Results: ");
-            			scanf("%d",&y);
-            			printf("\t\t\t\t\t__________________________________________\n");
-            			switch(y){
-                			case 1:
-                        		sum();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 2:
-                        		sum1();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 3:
-                        		sum2();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 4:
-                    			function();
-                    			printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                    			break;
-							case 5:
-                        		printf("goes to previous menu\n");
-                       			break;
-                    		default:
-                        		printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        		break;
-            				}
-                        break;
-                    case 4:
-                    	printf("\n----------------------------");
-                    	printf("\n\n");
-                        results();
-                        break;
-                    default:
-                        printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        break;
-            }
-            printf("\n________________________________\n");
-        break;
-
-        case 'b':
-            printf("\n\t\t\t\t\t\t\t");
-            party2();
-            printf("\n\t\t\t\t\t\t-------------------------\n");
-            printf("\t\t\t\t\t\t\t1.");
-            district1();
-            printf("\n\t\t\t\t\t\t\t2.");
-            district2();
-            printf("\n\t\t\t\t\t\t\t3.");
-            district3();
-            printf("\n\t\t\t\t\t\t\t4.back\n");
-            printf("\t\t\t\t\t\tEnter District: ");
-            scanf("%d",&y);
-            printf("\t\t\t\t\t__________________________________________\n");
-                switch(y){
-                    case 1:
-                        printf("\n\t\t\t\t\t\t\t");
-           				party2();
-           				printf("-");
-           				district1();
-            			printf("\n\t\t\t\t\t\t-------------------------\n");
-            			printf("\t\t\t\t\t\t\t1.");
-            			candidate1();
-            			printf("\n\t\t\t\t\t\t\t2.");
-            			candidate2();
-            			printf("\n\t\t\t\t\t\t\t3.");
-            			candidate3();
-            			printf("\n\t\t\t\t\t\t\t4.View eligible candidates.");
-            			printf("\n\t\t\t\t\t\t\t5.back\n\n");
-            			printf("\t\t\t\t\tEnter Candidate Number To Get Their Results: ");
-            			scanf("%d",&y);
-            			printf("\t\t\t\t\t__________________________________________\n");
-            			switch(y){
-                			case 1:
-                        		sum();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 2:
-                        		sum1();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 3:
-                        		sum2();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 4:
-                    			function();
-                    			printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                    			break;
-							case 5:
-                        		printf("goes to previous menu\n");
-                       			break;
-                    		default:
-                        		printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        		break;
-            				}		
-                        break;
-                        
-                    case 2:
-                        printf("\n\t\t\t\t\t\t\t");
-           				party2();
-           				printf("-");
-           				district2();
-            			printf("\n\t\t\t\t\t\t-------------------------\n");
-            			printf("\t\t\t\t\t\t\t1.");
-            			candidate1();
-            			printf("\n\t\t\t\t\t\t\t2.");
-            			candidate2();
-            			printf("\n\t\t\t\t\t\t\t3.");
-            			candidate3();
-            			printf("\n\t\t\t\t\t\t\t4.View eligible candidates.");
-            			printf("\n\t\t\t\t\t\t\t5.back\n\n");
-            			printf("\t\t\t\t\tEnter Candidate Number To Get Their Results: ");
-            			scanf("%d",&y);
-            			printf("\t\t\t\t\t__________________________________________\n");
-            			switch(y){
-                			case 1:
-                        		sum();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 2:
-                        		sum1();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 3:
-                        		sum2();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 4:
-                    			function();
-                    			printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                    			break;
-							case 5:
-                        		printf("goes to previous menu\n");
-                       			break;
-                    		default:
-                        		printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        		break;
-            				}		
-                        break;
-                    case 3:
-                        printf("\n\t\t\t\t\t\t\t");
-           				party2();
-           				printf("-");
-           				district3();
-            			printf("\n\t\t\t\t\t\t-------------------------\n");
-            			printf("\t\t\t\t\t\t\t1.");
-            			candidate1();
-            			printf("\n\t\t\t\t\t\t\t2.");
-            			candidate2();
-            			printf("\n\t\t\t\t\t\t\t3.");
-            			candidate3();
-            			printf("\n\t\t\t\t\t\t\t4.View eligible candidates.");
-            			printf("\n\t\t\t\t\t\t\t5.back\n\n");
-            			printf("\t\t\t\t\tEnter Candidate Number To Get Their Results: ");
-            			scanf("%d",&y);
-            			printf("\t\t\t\t\t__________________________________________\n");
-            			switch(y){
-                			case 1:
-                        		sum();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 2:
-                        		sum1();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 3:
-                        		sum2();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 4:
-                    			function();
-                    			printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                    			break;
-							case 5:
-                        		printf("goes to previous menu\n");
-                       			break;
-                    		default:
-                        		printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        		break;
-            				}		
-                        break;
-                    case 4:
-                    	printf("\n----------------------------");
-                        printf("\n\n");
-                        results();
-                        break;
-                    default:
-                        printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        break;
-            }
-            printf("\n________________________________\n");
-        break;
-
-        case 'c':
-             printf("\n\t\t\t\t\t\t\t");
-            party3();
-            printf("\n\t\t\t\t\t\t-------------------------\n");
-            printf("\t\t\t\t\t\t\t1.");
-            district1();
-            printf("\n\t\t\t\t\t\t\t2.");
-            district2();
-            printf("\n\t\t\t\t\t\t\t3.");
-            district3();
-            printf("\n\t\t\t\t\t\t\t4.back\n");
-            printf("\t\t\t\t\t\tEnter District: ");
-            scanf("%d",&y);
-            printf("\t\t\t\t\t__________________________________________\n");
-                switch(y){
-                    case 1:
-                        printf("\n\t\t\t\t\t\t\t");
-           				party3();
-           				printf("-");
-           				district1();
-            			printf("\n\t\t\t\t\t\t-------------------------\n");
-            			printf("\t\t\t\t\t\t\t1.");
-            			candidate1();
-            			printf("\n\t\t\t\t\t\t\t2.");
-            			candidate2();
-            			printf("\n\t\t\t\t\t\t\t3.");
-            			candidate3();
-            			printf("\n\t\t\t\t\t\t\t4.View eligible candidates.");
-            			printf("\n\t\t\t\t\t\t\t5.back\n\n");
-            			printf("\t\t\t\t\tEnter Candidate Number To Get Their Results: ");
-            			scanf("%d",&y);
-            			printf("\t\t\t\t\t__________________________________________\n");
-            			switch(y){
-                			case 1:
-                        		sum();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 2:
-                        		sum1();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 3:
-                        		sum2();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 4:
-                    			function();
-                    			printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                    			break;
-							case 5:
-                        		printf("goes to previous menu\n");
-                       			break;
-                    		default:
-                        		printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        		break;
-            				}		
-                        break;
-                    case 2:
-                        printf("\n\t\t\t\t\t\t\t");
-           				party3();
-           				printf("-");
-           				district2();
-            			printf("\n\t\t\t\t\t\t-------------------------\n");
-            			printf("\t\t\t\t\t\t\t1.");
-            			candidate1();
-            			printf("\n\t\t\t\t\t\t\t2.");
-            			candidate2();
-            			printf("\n\t\t\t\t\t\t\t3.");
-            			candidate3();
-            			printf("\n\t\t\t\t\t\t\t4.View eligible candidates.");
-            			printf("\n\t\t\t\t\t\t\t5.back\n\n");
-            			printf("\t\t\t\t\tEnter Candidate Number To Get Their Results: ");
-            			scanf("%d",&y);
-            			printf("\t\t\t\t\t__________________________________________\n");
-            			switch(y){
-                			case 1:
-                        		sum();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 2:
-                        		sum1();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 3:
-                        		sum2();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 4:
-                    			function();
-                    			printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                    			break;
-							case 5:
-                        		printf("goes to previous menu\n");
-                       			break;
-                    		default:
-                        		printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        		break;
-            				}		
-                        break;
-                    case 3:
-                        printf("\n\t\t\t\t\t\t\t");
-           				party3();
-           				printf("-");
-           				district3();
-            			printf("\n\t\t\t\t\t\t-------------------------\n");
-            			printf("\t\t\t\t\t\t\t1.");
-            			candidate1();
-            			printf("\n\t\t\t\t\t\t\t2.");
-            			candidate2();
-            			printf("\n\t\t\t\t\t\t\t3.");
-            			candidate3();
-            			printf("\n\t\t\t\t\t\t\t4.View eligible candidates.");
-            			printf("\n\t\t\t\t\t\t\t5.back\n\n");
-            			printf("\t\t\t\t\tEnter Candidate Number To Get Their Results: ");
-            			scanf("%d",&y);
-            			printf("\t\t\t\t\t__________________________________________\n");
-            			switch(y){
-                			case 1:
-                        		sum();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 2:
-                        		sum1();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 3:
-                        		sum2();
-                        		printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                        		break;
-                    		case 4:
-                    			function();
-                    			printf("\n\n\t\t\t\t\t\tPress 'y' to go to the Main Menu :");
-                        		scanf(" %c",&f);
-                        		if(f=='y'){
-                        			printf("\t\t\t\t\t__________________________________________\n\n");
-                        			results();
-								}
-                    			break;
-							case 5:
-                        		printf("goes to previous menu\n");
-                       			break;
-                    		default:
-                        		printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        		break;
-            				}		
-                        break;
-                    case 4:
-                    	printf("\n----------------------------");
-                        printf("\n\n");
-                        results();
-                        
-                        break;    
-                    default:
-                        printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
-                        break;
-            }
-            printf("\n________________________________\n");
-        break;
-		
-        case'd':
-            printf("goes to previous menu\n");
-            break;
-
-        default:
-            printf("\t!!!--INVALID NUMBER.PLEASE ENTER CORRECT NUMBER--!!!\n");
+	
+   	if (fgets(line, sizeof(line), file) != NULL) {
+        if (sscanf(line, "%99s", partyname) == 1) {
+            printf("\n\t\tParty: %s\n", partyname);
+        }
+    }
+   	
+    while (fgets(line, sizeof(line), file) != NULL) {
+       
         
-
-
+        if (sscanf(line, "%99s %d", Word1, &vote) == 2) {
+            printf("\n\t\t\t%d: %s %d", Number, Word1,vote);
+            Number++;
+        }
     }
-    printf("\n________________________________\n");
 
+    fclose(file);
+}
+
+void partytwo(){
+	
+	FILE *file;
+    char line[100];
+    char Word1[100];
+    char partyname[100];
+    int vote;
+    int Number = 1;
+
+    file = fopen("partytwo.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file!\n");
+        
+    }
+	if (fgets(line, sizeof(line), file) != NULL) {
+        if (sscanf(line, "%99s", partyname) == 1) {
+            printf("\n\n\t\tParty: %s\n", partyname);
+        }
+    }
+   
+    while (fgets(line, sizeof(line), file) != NULL) {
+       
+        
+        if (sscanf(line, "%99s %d", Word1, &vote) == 2) {
+            printf("\n\t\t\t%d: %s %d", Number, Word1,vote);
+            Number++;
+        }
+    }
+
+    fclose(file);
+}
+void partythree(){
+	
+	FILE *file;
+    char line[100];
+    char Word1[100];
+    char partyname[100];
+    int vote;
+    int Number = 1;
+
+    file = fopen("partythree.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file!\n");
+        
+    }
+	if (fgets(line, sizeof(line), file) != NULL) {
+        if (sscanf(line, "%99s", partyname) == 1) {
+            printf("\n\n\t\tParty: %s\n", partyname);
+        }
+    }
+   
+    while (fgets(line, sizeof(line), file) != NULL) {
+       
+        
+        if (sscanf(line, "%99s %d", Word1, &vote) == 2) {
+            printf("\n\t\t\t%d: %s %d", Number, Word1,vote);
+            Number++;
+        }
+    }
+
+    fclose(file);
+}
+void partyfour(){
+	
+	FILE *file;
+    char line[100];
+    char Word1[100];
+    char partyname[100];
+    int vote;
+    int Number = 1;
+
+    file = fopen("partyfour.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file!\n");
+        
+    }
+	if (fgets(line, sizeof(line), file) != NULL) {
+        if (sscanf(line, "%99s", partyname) == 1) {
+            printf("\n\n\t\tParty: %s\n", partyname);
+        }
+    }
+   
+    while (fgets(line, sizeof(line), file) != NULL) {
+       
+        
+        if (sscanf(line, "%99s %d", Word1, &vote) == 2) {
+            printf("\n\t\t\t%d: %s %d", Number, Word1,vote);
+            Number++;
+        }
+    }
+
+    fclose(file);
+}
+void partyfive(){
+	
+	FILE *file;
+    char line[100];
+    char Word1[100];
+    char partyname[100];
+    int vote;
+    int Number = 1;
+
+    file = fopen("partyfive.txt", "r");
+    if (file == NULL) {
+        printf("Error opening file!\n");
+        
+    }
+	if (fgets(line, sizeof(line), file) != NULL) {
+        if (sscanf(line, "%99s", partyname) == 1) {
+            printf("\n\n\t\tParty: %s\n", partyname);
+        }
+    }
+   
+    while (fgets(line, sizeof(line), file) != NULL) {
+       
+        
+        if (sscanf(line, "%99s %d", Word1, &vote) == 2) {
+            printf("\n\t\t\t%d: %s %d", Number, Word1,vote);
+            Number++;
+        }
+    }
+
+    fclose(file);
+}
+
+
+
+struct Record {
+    char name[20];
+    char party[20];
+    int value;
+    
+};
+
+void max() {
+    char *file[] = {
+        "partyone.txt",
+        "partytwo.txt",
+        "partythree.txt",
+        "partyfour.txt",
+        "partyfive.txt"
+    };
+    
+    struct Record records[50]; // assume max 50 entries total
+    int count = 0;
+    int i,j;
+
+    for (i = 0; i < 5; i++) {
+        FILE *fp = fopen(file[i], "r");
+        if (!fp) {
+            printf("Cannot open file %s\n", file[i]);
+            continue;
+        }
+
+        char party[20], name[20];
+        int value;
+
+        // first line: party name
+        fscanf(fp, "%s", party);
+
+        
+        while (fscanf(fp, "%s %d", name, &value) == 2) {
+            strcpy(records[count].party, party);
+            strcpy(records[count].name, name);
+            records[count].value = value;
+            count++;
+        }
+        fclose(fp);
+    }
+
+    
+    for (i = 0; i < count - 1; i++) {
+        for (j = i + 1; j < count; j++) {
+            if (records[j].value > records[i].value) {
+                struct Record temp = records[i];
+                records[i] = records[j];
+                records[j] = temp;
+            }
+        }
+    }
+
+    printf("\t\tSelected candidates:\n");
+    printf("\t\t----------------------\n");
+    for (i = 0; i < 5 && i < count; i++) {
+        printf("\t\t%d. %s (%s) - %d\n", i + 1, records[i].name, records[i].party, records[i].value);
+    }
+
+    
+}
+int main(){
+	char a;
+	printf("\t\t\t========== RESULTS TABLE ==========");
+	printf("\n\t\t-------------------------------------------------------------\n");
+	partyone();
+	partytwo();
+	partythree();
+	partyfour();
+	partyfive();
+	printf("\n\t\t-------------------------------------------------------------\n");
+	printf("\n\n\tEnter 'e' to view selected candidates and Enter 'b' to go to the Main Menu: ");
+	scanf(" %c",&a);
+		if(a=='e'){
+			max();
+		}
+		else{
+			printf("INVALID INPUT-TRY AGAIN");
+	}
+	
+	return 0;
 }

@@ -7,6 +7,7 @@ int main(){
     char W[100],R[10],T[100],O[100],E[12],L[50],K[12],J[8],H[100],F[10],D[100];
     char A[25],Z[100],X[12],C[8],V[100],B[50],N[12],M[50],G[12],Y[100],P[12],PA[12];
     int U,Q,S,rl,I; 
+    int confirm,back;//for confirmations and previous page.
     
     printf("\n\n\n\n\n\n\n\n\t\t\t\t\t---- WELLCOME TO PARLIAMENT ELECTION VOTING SYSTEM 2025 ----\n");
     printf("\t\t\t\t\t...............................................................\n\n");
@@ -99,7 +100,10 @@ int main(){
         switch(Q){
                  
             case 1:
-                system("cls");
+                do{
+                    system("cls");
+                    back=0;
+                    confirm=0;
 
                 printf("\t\t\t\t...............................................................\n\n");
                 printf("\n\t\t\t\t||\t#### ENTER YOUR CANDIDATES DATAILS HERE ####         ||\n\n");
@@ -129,7 +133,6 @@ int main(){
 
                 printf("\t\tENTER YOUR FULL NAME             :");
                 scanf("%s",W);
-                fprintf(candi1,"\n%s",W);
 
                 int valid=0;
                 for(;!valid;){
@@ -144,44 +147,55 @@ int main(){
                     }
                 }
                 printf("\n\t\tYour ID number is accepted: %s\n", E);
-                fprintf(candi1,"\t%s",E);
-                fprintf(candi2,"\n%s",E);
-            
+                            
                 printf("\n\t\tYOUR DATE OF BIRTH (YYYY.MM.DD):");
                 scanf("%s",R);
-                fprintf(candi1,"\t%s",R);
 
                 printf("\n\t\tYOUR G-mail        :");
                 scanf("%s",T);
-                fprintf(candi1,"\t%s",T);
 
                 printf("\n\t\tYOUR PARTY NAME    :");
                 scanf("%s",Y);
-                fprintf(candi1,"\t%s",Y);
 
                 printf("\n\t\tYOUR ZIP CODE      :");
                 scanf("%d",&U);
-                fprintf(candi1,"\t%d",U);
 
                 printf("\n\t\tYOUR ADDRESS       :");
                 scanf("%s",O);
-                fprintf(candi1,"\t%s",O);
                 
                 printf("\n\t\tUSERNAME  :");
                 scanf("%s",K);
-                fprintf(candi2,"\n%s",K);
 
                 printf("\n\t\t\t* include 6 Characters and Don't include a simbls.");
                 printf("\n\t\tPASSWORD  :");
                 scanf("%s",J);            
-                fprintf(candi2,"\t%s",J);
+
+                printf("\n\t\t1. Confirm and Save");
+                printf("\n\t\t2. Re-enter Data");
+                printf("\n\t\t3. Back to Previous Menu\n");
+                printf("\n\t\tEnter choice: ");
+                scanf("%d",&confirm);
+
+                if(confirm==1){
+                    fprintf(candi1,"\n%s",W);
+                    fprintf(candi1,"\t%s",E);
+                    fprintf(candi1,"\t%s",R);
+                    fprintf(candi1,"\t%s",T);
+                    fprintf(candi1,"\t%s",Y);
+                    fprintf(candi1,"\t%d",U);
+                    fprintf(candi1,"\t%s",O);
+                    fprintf(candi2,"\n%s",K);
+                    fprintf(candi2,"\t%s",J);
+                }
+
 
                 printf("\t\t\t\t...........................................................\n\n");
 
                 printf("\t\t\t\t\t\tTHANK YOU FOR YOUR COOPARION !!!\n");
 
                 printf("\t\t\t\t...........................................................\n\n");
-            
+                while(confirm==2);//choose re enter data need to enter repeat 
+                if(back)break;
                 break;
 
             case 2:

@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include<math.h>
 #include<string.h>
-#include<stdlib.h>
+#include<stdlib.h>//this use system("cls")
 int main(){  
     system("cls");
-    char W[100],R[10],T[100],O[100],E[12],K[12],J[8],H[100],F[10],D[100],I[12];
-    char A[25],Z[100],X[12],C[8],V[100],B[50],N[12],G[12],Y[100],P[12];
-    int U,Q,S,rl,len; 
-    int confirm,back;//for confirmations and previous page.
+    char W[100],R[10],T[100],O[100],E[12],K[12],J[12],H[100],F[10],D[100],I[12];
+    char A[25],Z[100],X[12],C[12],V[100],B[50],N[12],G[12],P[12];
+    int U,Q,S,rl,len,Y; 
+    int confirm,back;//for confirmations and previous page value
     
     printf("\n\n\n\n\n\n\n\n\t\t\t\t\t---- WELLCOME TO PARLIAMENT ELECTION VOTING SYSTEM 2025 ----\n");
     printf("\t\t\t\t\t...............................................................\n\n");
@@ -21,7 +21,7 @@ int main(){
     scanf("%d",&rl);
 
     
-    FILE *candi1;
+    FILE *candi1; //file creating 
     FILE *candi2;
     FILE *vot1;
     FILE *party1;
@@ -72,19 +72,19 @@ int main(){
             printf("\t\t\t\t\tENTER YOUR CHOISE HERE :");
             scanf("%d",&Q);
 
-            fseek(candi1, 0, SEEK_END);
+            fseek(candi1, 0, SEEK_END); //this code is useto show default file header
             long size = ftell(candi1);
             if (size == 0) {
                 fprintf(candi1, "NAME\tID_NUM\tDOB\tG-mail\tPARTY_NAME\tZIP_CODE\tADDRESS\n");
             }
 
-            fseek(candi2, 0, SEEK_END);
+            fseek(candi2, 0, SEEK_END);//this code is useto show default file header
             long size1 = ftell(candi2);
             if (size1 == 0) {
                 fprintf(candi2, "USER_NAME\tPASSWORD\n");
             }
 
-            fseek(vot1, 0, SEEK_END);
+            fseek(vot1, 0, SEEK_END);//this code is useto show default file header
             long size2 = ftell(vot1);
             if (size2 == 0) {
                 fprintf(vot1, "NAME\tID_NUM\tDOB\tG-mail\tZIP_CODE\t\tADDRESS\n");
@@ -94,7 +94,7 @@ int main(){
                  
             case 1:
                 do{
-                    system("cls");
+                    system("cls");//close the up interface
                     back=0;
                     confirm=0;
 
@@ -103,8 +103,9 @@ int main(){
                     printf("\t\t\t\t...............................................................\n\n");
 
                     printf("\t\tENTER YOUR FULL NAME             :");
+                     //this umder 4 code line use to user input data with space but it read a one part
                     getchar();     
-                    fgets(W, sizeof(W), stdin);
+                    fgets(W, sizeof(W), stdin);           
                     len = strlen(W);
                         if (len > 0 && W[len - 1] == '\n')
                         W[len - 1] = '\0';
@@ -117,11 +118,10 @@ int main(){
                         if(strlen(E)==12 ||strlen(E)==9){
                             valid=1;
                         }else{
-                            printf("\t\tIt's an invalid number!!! \n\t\tPlease enter a 9 or 12 Digit your national ID number.");
-                            scanf("%s",E);
+                            continue;
                         }
                     }
-                    printf("\n\t\tYour ID number is accepted: %s\n", E);
+                    printf("\n\t\tYour ID number is accepted: %s\n",E);
                                 
                     printf("\n\t\tYOUR DATE OF BIRTH (YYYY.MM.DD):");
                     scanf("%s",R);
@@ -148,20 +148,72 @@ int main(){
                             printf("Line %d is empty or has no word.\n", Number);
                         }
                     }
-
+                    
                     fclose(file);
-                    printf("\n\t\tYOUR PARTY NAME    :");
-                    getchar();     
-                    fgets(Y, sizeof(Y), stdin);
-                    len = strlen(Y);
-                        if (len > 0 && Y[len - 1] == '\n')
-                        Y[len - 1] = '\0';
+                    printf("\n\t\tYOUR PARTY     :");
+                    scanf("%d",&Y);
 
+                    switch(Y){
+                        case 1:
+                            FILE *party1;
+                            party1=fopen("partyone.txt","a");
+                            if (party1== NULL) {
+                                printf("Error opening file for writing!\n");
+                                return 1;
+                            }
+                            fprintf(party1,"%s",W);
+                            fclose(party1);
+                            break;
+                        case 2:
+                            FILE *party2;
+                            party2=fopen("partytwo.txt","a");
+                            if (party2== NULL) {
+                                printf("Error opening file for writing!\n");
+                                return 1;
+                            }
+                            fprintf(party1,"%s",W);
 
+                            fclose(party2);
+                            break;
+                        case 3:
+                            FILE *party3;
+                            party3=fopen("partythree.txt","a");
+                            if (party3== NULL) {
+                                printf("Error opening file for writing!\n");
+                                return 1;
+                            }
+                            fprintf(party1,"%s",W);
+                            fclose(party3);
+                            break;
+                        case 4:
+                            FILE *party4;
+                            party4=fopen("partyfour.txt","a");
+                            if (party4== NULL) {
+                                printf("Error opening file for writing!\n");
+                                return 1;
+                            }
+                            fprintf(party1,"%s",W);
+                            fclose(party4);
+                            break;
+                        case 5:
+                            FILE *party5;
+                            party5=fopen("partyfive.txt","a");
+                            if (party5== NULL) {
+                                printf("Error opening file for writing!\n");
+                                return 1;
+                            }
+                            fprintf(party1,"%s",W);
+                            fclose(party5);
+                            break;
+                        default:
+                            printf("THIS is invalied number::");
+                            break;
+                    }
                     printf("\n\t\tYOUR ZIP CODE      :");
                     scanf("%d",&U);
 
                     printf("\n\t\tYOUR ADDRESS       :");
+                     //this umder 4 code line use to user input data with space but it read a one part
                     getchar();     
                     fgets(O, sizeof(O), stdin);
                     len = strlen(O);
@@ -172,24 +224,34 @@ int main(){
                         printf("\n\t\tUSERNAME___________");
                         printf("\n\t\tThis user name must be your ID_NUMBER\t:");
                         scanf("%s",K);
-                    }while (strcmp(E, K) != 0);
+                    }while ((E==K) != 0);
 
-                    printf("\n\t\t\t* include 8 Characters and Don't include a simbls.");
-                    printf("\n\t\tPASSWORD  :");
-                    scanf("%s",J);            
-
+                    int valid7=0;
+                    for(;!valid7;){
+                        printf("\n\t\tENTER YOUR PARTY PASSWORD _________");
+                        printf("\n\t\tinclude 8 Characters and Don't include a simbls.");
+                        scanf("%s",J);            
+                        if(strlen(J)==8){
+                            valid7=1;
+                        }else{
+                            continue;
+                        }
+                    }
+                    printf("\n\t\tYour PASSWORD is accepted: %s\n",J);
+                          
                     printf("\n\t\t1. Confirm and Save");
                     printf("\n\t\t2. Re-enter Data");
                     printf("\n\t\t3. Exit the system\n");
                     printf("\n\t\tEnter choice: ");
                     scanf("%d",&confirm);
 
+                    //store data in file
                     if(confirm==1){
                         fprintf(candi1,"\n%s",W);
                         fprintf(candi1,"\t%s",E);
                         fprintf(candi1,"\t%s",R);
                         fprintf(candi1,"\t%s",T);
-                        fprintf(candi1,"\t%s",Y);
+                        fprintf(candi1,"\t%d",Y);
                         fprintf(candi1,"\t%d",U);
                         fprintf(candi1,"\t%s",O);
                         fprintf(candi2,"\n%s",K);
@@ -212,11 +274,12 @@ int main(){
                 do{
                     back=0;
                     confirm=0;
-                    system("cls");
+                    system("cls");//close the up interface
 
                     printf("\n\t\t\t\t\t\t####ENTER YOUR DATAILS HERE ####\n\n");
 
                     printf("\t\tENTER YOUR FULL NAME             :");
+                     //this umder 4 code line use to user input data with space but it read a one part
                     getchar();     
                     fgets(H, sizeof(H), stdin);
                     len = strlen(H);
@@ -254,17 +317,28 @@ int main(){
                         printf("\n\t\tUSERNAME___________");
                         printf("\n\t\tThis user name must be your ID_NUMBER\t:");
                         scanf("%s",X);
-                    }while (strcmp(G, X) != 0);
+                    }while ((G== X) != 0);
 
-                    printf("\n\t\tPASSWORD  :");
-                    scanf("%s",C);
-
+                    int valid10=0;
+                    for(;!valid10;){
+                        printf("\n\t\tENTER YOUR PARTY PASSWORD _________");
+                        printf("\n\t\tinclude 8 Characters and Don't include a simbls.");
+                        scanf("%s",C);            
+                        if(strlen(C)==8){
+                            valid10=1;
+                        }else{
+                            continue;
+                        }
+                    }
+                    printf("\n\t\tYour PASSWORD is accepted: %s\n",C);
+                    
                     printf("\n\t\t1. Confirm and Save");
                     printf("\n\t\t2. Re-enter Data");
                     printf("\n\t\t3. Back to Previous Menu\n");
                     printf("\n\t\tEnter choice: ");
                     scanf("%d",&confirm);
 
+                    //store data in file
                     if(confirm==1){
                         fprintf(vot1,"\n%s",H);
                         fprintf(vot1,"\t%s",G);
@@ -291,11 +365,12 @@ int main(){
                 do{
                     back-0;
                     confirm=0;
-                    system("cls");
+                    system("cls");//close the up interface
                     
                     printf("\n\t\t\t\t\t\t#### ENTER YOUR DATAILS HERE ####\n\n");
 
                     printf("\t\tENTER YOUR POLITICAL PARTY NAME  :");
+                     //this umder 4 code line use to user input data with space but it read a one part
                     getchar();
                     fgets(V, sizeof(V), stdin);
                     len = strlen(V);
@@ -304,6 +379,7 @@ int main(){
 
                     printf("\n\t\t\t\t  PLEASE ENTER THIS AREA TO YOUR PARTY CHIRMEN DETAILES");
                     printf("\n\t\tNAME :");
+                     //this umder 4 code line use to user input data with space but it read a one part
                     getchar();
                     fgets(A, sizeof(A), stdin);
                     len = strlen(A);
@@ -328,6 +404,7 @@ int main(){
 
                     printf("\n\t\t\t\t  PLEASE ENTER THIS AREA TO YOUR PARTY SECRATERY DETAILES");
                     printf("\n\t\tNAME :");
+                     //this umder 4 code line use to user input data with space but it read a one part
                     getchar();
                     fgets(B, sizeof(B), stdin);
                     len = strlen(B);
@@ -347,16 +424,27 @@ int main(){
                         }
                     }
                     printf("\n\t\tYour ID number is accepted: %s\n", P);
-                
-                    printf("ENTER YOUR PARTY SYSTEM PASSWORD :");
-                    scanf("%s",I);
 
+                    int valid9=0;
+                    for(;!valid9;){
+                        printf("\n\t\tENTER YOUR PARTY PASSWORD _________");
+                        printf("\n\t\tinclude 8 Characters and Don't include a simbls.");
+                        scanf("%s",I);            
+                        if(strlen(I)==8){
+                            valid9=1;
+                        }else{
+                            continue;
+                        }
+                    }
+                    printf("\n\t\tYour PASSWORD is accepted: %s\n",I);
+                    
                     printf("\n\t\t1. Confirm and Save");
                     printf("\n\t\t2. Re-enter Data");
                     printf("\n\t\t3. Back to Previous Menu\n");
                     printf("\n\t\tEnter choice: ");
                     scanf("%d",&confirm);
 
+                    //store data in file
                     if(confirm==1){
                         fprintf(party1,"\n%s",V);
                         fprintf(party1,"\t%s",A);
@@ -393,8 +481,8 @@ int main(){
         }
 
     case 2:
-        break;
-               
+        
+        break;           
     }
 
 return 0;

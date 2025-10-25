@@ -400,7 +400,6 @@ int main(){
                         }
                     }
                     printf("\n\t\tYour ID number is accepted: %s\n", N);
-                    fprintf(party1,"\t%s",N);
 
                     printf("\n\t\t\t\t  PLEASE ENTER THIS AREA TO YOUR PARTY SECRATERY DETAILES");
                     printf("\n\t\tNAME :");
@@ -446,11 +445,11 @@ int main(){
 
                     //store data in file
                     if(confirm==1){
-                        fprintf(party1,"\n%s",V);
+                        fprintf(party1,"%s",V);
                         fprintf(party1,"\t%s",A);
                         fprintf(party1,"\t%s",N);
                         fprintf(party1,"\t%s",B);
-                        fprintf(party1,"\t%s",P);
+                        fprintf(party1,"\t%s\n",P);
                         fprintf(party2,"\n%s",V);
                         fprintf(party2,"\t%s",I);
                         printf("\n\t\tData Saved Successfully!\n");

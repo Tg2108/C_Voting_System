@@ -168,9 +168,11 @@ int main(){
                         if (len > 0 && O[len - 1] == '\n')
                         O[len - 1] = '\0';
 
-                    
-                    printf("\n\t\tUSERNAME  :");
-                    scanf("%s",K);
+                    do{
+                        printf("\n\t\tUSERNAME___________");
+                        printf("\n\t\tThis user name must be your ID_NUMBER\t:");
+                        scanf("%s",K);
+                    }while (strcmp(E, K) != 0);
 
                     printf("\n\t\t\t* include 8 Characters and Don't include a simbls.");
                     printf("\n\t\tPASSWORD  :");
@@ -247,9 +249,12 @@ int main(){
                     len = strlen(Z);
                         if (len > 0 && Z[len - 1] == '\n')
                         Z[len - 1] = '\0';
-                    
-                    printf("\n\t\tUSERNAME  :");
-                    scanf("%S",X);
+
+                    do{
+                        printf("\n\t\tUSERNAME___________");
+                        printf("\n\t\tThis user name must be your ID_NUMBER\t:");
+                        scanf("%s",X);
+                    }while (strcmp(G, X) != 0);
 
                     printf("\n\t\tPASSWORD  :");
                     scanf("%s",C);

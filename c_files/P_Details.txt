@@ -1,3 +1,0 @@
-PARTY_NAME,Chirmen_NAME,Chirmen_ID,Secratery_NAME,Secratery_ID
-
-u	ranil	200426900220	anura	200426902200

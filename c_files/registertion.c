@@ -138,7 +138,7 @@ int main(){
                     char Word[100];
                     int Number = 0;
 
-                    file = fopen("P_Details.txt", "r");
+                    file = fopen("approv_party.txt", "r");
                     if (file == NULL) {
                         printf("Error opening file!\n");
                         

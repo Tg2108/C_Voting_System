@@ -183,12 +183,13 @@ switch(x){
 
                     fclose(fp);
 
-                    if (found)
+                    if (found){
                         printf("You Can Vorting.\n");
-                    else
+                        e();
+                     } else{
                         printf("Your Request Is Not Aprove Pleace Enter a Correct Details.\n");
-
-                   e();
+                     }
+                   
 
                     break; 
                 }
@@ -222,6 +223,7 @@ switch(x){
                 if(strcmp(name_from_file, name_from_user) == 0 && strcmp(avg_from_file, avg_from_user) == 0){
                     printf("\n\n\tYou Successful Loging..\n\n");
                     found = 1; 
+                    r();
                     break; 
                 }
             }
@@ -233,7 +235,7 @@ switch(x){
                 
             }
 
-            r();
+            
         break;
 
     case 4:

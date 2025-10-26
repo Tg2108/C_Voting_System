@@ -2,65 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #define MAX_PARTIES 100
-void pa() {
-    FILE *fp1;
-    FILE *fp2;
-    char l1[256];
-    char n1[50], p1[50];
-    int p2=0;
-    char fn[100];
-    char parties[MAX_PARTIES][50]; 
-    int partyCount = 0;   
-    fp1 = fopen("C_Details.txt", "r");
-    if (fp1 == NULL) {
-        printf("Error: Cannot open C_Details.txt\n");
-        
-    }
-    
-    fgets(l1, sizeof(l1), fp1);    
-    while (fgets(l1, sizeof(l1), fp1)) {
-        if (sscanf(l1, "%s %*s %*s %*s %s", n1, p1) == 2) {            
-            int index = -1;
-            int i;
-            for (i = 0; i < partyCount; i++) {
-                if (strcmp(parties[i], p1) == 0) {
-                    index = i;
-                    break;
-                }
-            }           
-            if (index == -1 && partyCount < MAX_PARTIES) {
-                strcpy(parties[partyCount], p1);
-                index = partyCount;
-                partyCount++;
-            }           
-            if (index == 0)
-                sprintf(fn, "party1.txt");
-            else if (index == 1)
-                sprintf(fn, "party2.txt");
-            else if (index == 2)
-                sprintf(fn, "party3.txt");
-            else
-                sprintf(fn, "party%d.txt", index + 1);           
-            fp2 = fopen(fn, "a");
-            if (fp2 == NULL) {
-                printf("Error: Cannot create %s\n", fn);
-                continue;
-            }
-            
-            fseek(fp2, 0, SEEK_END);
-            long size = ftell(fp2);
-            if (size == 0) {
-                fprintf(fp2, "%s\n", p1);
-            }            
-            fprintf(fp2, "%s %d\n", n1,p2);
-
-            fclose(fp2);
-        }
-    }
-    fclose(fp1);
-    
-    
-}
 void partyone(){
 	
 	FILE *file;
@@ -265,7 +206,7 @@ void max() {
 }
 int main(){
 	char a;
-	pa();
+	
 	printf("\t\t\t\t\t========== RESULTS TABLE ==========");
 	printf("\n\t\t\t------------------------------------------------------------------\n");
 	partyone();
@@ -292,4 +233,4 @@ int main(){
 			}
 	}	
 	return 0;
-}
+}  

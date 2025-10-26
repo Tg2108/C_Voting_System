@@ -89,12 +89,7 @@ int main(){
             if (size2 == 0) {
                 fprintf(vot1, "NAME\tID_NUM\tDOB\tG-mail\tZIP_CODE\t\tADDRESS");
             }
-            fseek(party1, 0, SEEK_END); 
-            long size4 = ftell(party1);
-            if (size4 == 0) {
-                fprintf(party1, "PARTY NAME\tC_NAME\tC_ID\tS_NAME\tS_ID\t");
-            }
-
+            
         switch(Q){
                  
             case 1:
@@ -122,6 +117,9 @@ int main(){
                         scanf("%s",E);            
                         if(strlen(E)==12 ||strlen(E)==9){
                             valid=1;
+                            fprintf(candi1,"\n%s",W);
+                        fprintf(candi1,"\t%s",E);
+                        
                         }else{
                             continue;
                         }
@@ -258,8 +256,6 @@ int main(){
 
                     //store data in file
                     if(confirm==1){
-                        fprintf(candi1,"\n%s",W);
-                        fprintf(candi1,"\t%s",E);
                         fprintf(candi1,"\t%s",R);
                         fprintf(candi1,"\t%s",T);
                         fprintf(candi1,"\t%d",Y);

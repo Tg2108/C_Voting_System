@@ -92,7 +92,7 @@ int main(){
             fseek(party1, 0, SEEK_END); 
             long size4 = ftell(party1);
             if (size4 == 0) {
-                fprintf(party1, "NAME\tID_NUM\tDOB\tG-mail\tPARTY_NAME\tZIP_CODE\tADDRESS");
+                fprintf(party1, "PARTY NAME\tC_NAME\tC_ID\tS_NAME\tS_ID\t");
             }
 
         switch(Q){

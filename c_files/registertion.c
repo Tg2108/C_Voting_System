@@ -87,7 +87,7 @@ int main(){
             fseek(vot1, 0, SEEK_END);//this code is useto show default file header
             long size2 = ftell(vot1);
             if (size2 == 0) {
-                fprintf(vot1, "NAME\tID_NUM\tDOB\tG-mail\tZIP_CODE\tADDRESS");
+                fprintf(vot1, "NAME\tID_NUM\tDOB\tG-mail\tADDRESS");
             }
             
         switch(Q){
@@ -322,7 +322,6 @@ int main(){
                     len = strlen(Z);
                         if (len > 0 && Z[len - 1] == '\n')
                         Z[len - 1] = '\0';
-
                     do{
                         printf("\n\t\tUSERNAME___________");
                         printf("\n\t\tThis user name must be your ID_NUMBER\t:");
@@ -352,21 +351,21 @@ int main(){
                     if(confirm==1){
                         fprintf(vot1,"\t%s",F);
                         fprintf(vot1,"\t%s",D);
-                        fprintf(vot1,"\t%s",Z);
                         fprintf(candi2,"\n%s",X);
                         fprintf(candi2,"\t%s",C);
                         printf("\n\t\tData Saved Successfully!\n");
                     }else if(confirm==3){
                         back=1;
                     }
-
+                    
                     printf("\t\t\t\t...........................................................\n\n");
 
                     printf("\t\t\t\t\t\tTHANK YOU FOR YOUR COOPARION !!!\n");
 
                     printf("\t\t\t\t...........................................................\n\n");
                 }while(confirm==2);//choose re enter data need to enter repeat 
-                if(back)break;            
+                if(back)break;
+                fprintf(vot1,"\t%s",Z);            
                 break;
 
             case 3:

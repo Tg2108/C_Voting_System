@@ -87,7 +87,7 @@ int main(){
             fseek(vot1, 0, SEEK_END);//this code is useto show default file header
             long size2 = ftell(vot1);
             if (size2 == 0) {
-                fprintf(vot1, "NAME\tID_NUM\tDOB\tG-mail\tZIP_CODE\t\tADDRESS");
+                fprintf(vot1, "NAME\tID_NUM\tDOB\tG-mail\tZIP_CODE\tADDRESS");
             }
             
         switch(Q){
@@ -118,7 +118,7 @@ int main(){
                         if(strlen(E)==12 ||strlen(E)==9){
                             valid=1;
                             fprintf(candi1,"\n%s",W);
-                        fprintf(candi1,"\t%s",E);
+                            fprintf(candi1,"\t%s",E);
                         
                         }else{
                             continue;
@@ -132,6 +132,7 @@ int main(){
                     printf("\n\t\tYOUR G-mail        :");
                     scanf("%s",T);
 
+                    //show the valied parties
                     FILE *file;
                     char line[100];
 
@@ -237,7 +238,7 @@ int main(){
 
                     int valid7=0;
                     for(;!valid7;){
-                        printf("\n\t\tENTER YOUR PARTY PASSWORD _________");
+                        printf("\n\t\tENTER YOUR  PASSWORD _________");
                         printf("\n\t\tinclude 8 Characters and Don't include a simbls.");
                         scanf("%s",J);            
                         if(strlen(J)==8){
@@ -306,6 +307,8 @@ int main(){
                         }
                     }
                     printf("\n\t\tYour ID number is accepted: %s\n", G);
+                    fprintf(vot1,"\n%s",H);
+                    fprintf(vot1,"\t%s",G);
 
                     printf("\n\t\tYOUR DATE OF BIRTH(YYYY.MM.DD) :");
                     scanf("%s",F);
@@ -328,11 +331,11 @@ int main(){
 
                     int valid10=0;
                     for(;!valid10;){
-                        printf("\n\t\tENTER YOUR PARTY PASSWORD _________");
+                        printf("\n\t\tENTER YOUR PASSWORD _________");
                         printf("\n\t\tinclude 8 Characters and Don't include a simbls.");
                         scanf("%s",C);            
                         if(strlen(C)==8){
-                            valid10=1;
+                            valid10=1; 
                         }else{
                             continue;
                         }
@@ -347,8 +350,6 @@ int main(){
 
                     //store data in file
                     if(confirm==1){
-                        fprintf(vot1,"\n%s",H);
-                        fprintf(vot1,"\t%s",G);
                         fprintf(vot1,"\t%s",F);
                         fprintf(vot1,"\t%s",D);
                         fprintf(vot1,"\t%s",Z);

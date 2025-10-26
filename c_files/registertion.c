@@ -75,19 +75,24 @@ int main(){
             fseek(candi1, 0, SEEK_END); //this code is useto show default file header
             long size = ftell(candi1);
             if (size == 0) {
-                fprintf(candi1, "NAME\tID_NUM\tDOB\tG-mail\tPARTY_NAME\tZIP_CODE\tADDRESS\n");
+                fprintf(candi1, "NAME\tID_NUM\tDOB\tG-mail\tPARTY_NAME\tZIP_CODE\tADDRESS");
             }
 
             fseek(candi2, 0, SEEK_END);//this code is useto show default file header
             long size1 = ftell(candi2);
             if (size1 == 0) {
-                fprintf(candi2, "USER_NAME\tPASSWORD\n");
+                fprintf(candi2, "USER_NAME\tPASSWORD");
             }
 
             fseek(vot1, 0, SEEK_END);//this code is useto show default file header
             long size2 = ftell(vot1);
             if (size2 == 0) {
-                fprintf(vot1, "NAME\tID_NUM\tDOB\tG-mail\tZIP_CODE\t\tADDRESS\n");
+                fprintf(vot1, "NAME\tID_NUM\tDOB\tG-mail\tZIP_CODE\t\tADDRESS");
+            }
+            fseek(party1, 0, SEEK_END); 
+            long size4 = ftell(party1);
+            if (size4 == 0) {
+                fprintf(party1, "NAME\tID_NUM\tDOB\tG-mail\tPARTY_NAME\tZIP_CODE\tADDRESS");
             }
 
         switch(Q){
@@ -131,6 +136,7 @@ int main(){
 
                     FILE *file;
                     char line[100];
+
                     char Word[100];
                     int Number = 0;
 
@@ -150,11 +156,11 @@ int main(){
                     }
                     
                     fclose(file);
-                    printf("\n\t\tYOUR PARTY     :");
+                    printf("\n\t\tENTER YOUR PARTY NUMBER     :");
                     scanf("%d",&Y);
 
                     switch(Y){
-                        case 1:
+                        case 1:{
                             FILE *party1;
                             party1=fopen("partyone.txt","a");
                             if (party1== NULL) {
@@ -164,47 +170,52 @@ int main(){
                             fprintf(party1,"%s",W);
                             fclose(party1);
                             break;
-                        case 2:
+                        }
+                        case 2:{
                             FILE *party2;
                             party2=fopen("partytwo.txt","a");
                             if (party2== NULL) {
                                 printf("Error opening file for writing!\n");
                                 return 1;
                             }
-                            fprintf(party1,"%s",W);
+                            fprintf(party2,"%s",W);
 
                             fclose(party2);
                             break;
-                        case 3:
+                        }
+                        case 3:{
                             FILE *party3;
                             party3=fopen("partythree.txt","a");
                             if (party3== NULL) {
                                 printf("Error opening file for writing!\n");
                                 return 1;
                             }
-                            fprintf(party1,"%s",W);
+                            fprintf(party3,"%s",W);
                             fclose(party3);
                             break;
-                        case 4:
+                        }
+                        case 4:{
                             FILE *party4;
                             party4=fopen("partyfour.txt","a");
                             if (party4== NULL) {
                                 printf("Error opening file for writing!\n");
                                 return 1;
                             }
-                            fprintf(party1,"%s",W);
+                            fprintf(party4,"%s",W);
                             fclose(party4);
                             break;
-                        case 5:
+                        }
+                        case 5:{
                             FILE *party5;
                             party5=fopen("partyfive.txt","a");
                             if (party5== NULL) {
                                 printf("Error opening file for writing!\n");
                                 return 1;
                             }
-                            fprintf(party1,"%s",W);
+                            fprintf(party5,"%s",W);
                             fclose(party5);
                             break;
+                        }
                         default:
                             printf("THIS is invalied number::");
                             break;
@@ -478,11 +489,10 @@ int main(){
             fclose(party2);
 
         }
-
+        break;
     case 2:
         
         break;           
     }
-
 return 0;
 }

@@ -243,7 +243,7 @@ switch(x){
             printf("Enter Your Passward: ");
             scanf("%s", avg_from_user);
 
-            if(strcmp("200421402650", name_from_user) == 0 && strcmp("20040801", avg_from_user) == 0){
+            if(strcmp("ADDMIN1", name_from_user) == 0 && strcmp("2025", avg_from_user) == 0){
             
                     printf("\n\t\t\t\t\t1.CANDIDATES\n");
                     printf("\t\t\t\t\t2.VOTERS\n");

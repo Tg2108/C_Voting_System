@@ -75,21 +75,21 @@ int main(){
             fseek(candi1, 0, SEEK_END); //this code is useto show default file header
             long size = ftell(candi1);
             if (size == 0) {
-                fprintf(candi1, "NAME\tID_NUM\tDOB\tG-mail\tPARTY_NAME\tZIP_CODE\tADDRESS\n");
+                fprintf(candi1, "NAME\tID_NUM\tDOB\tG-mail\tPARTY_NAME\tZIP_CODE\tADDRESS");
             }
 
             fseek(candi2, 0, SEEK_END);//this code is useto show default file header
             long size1 = ftell(candi2);
             if (size1 == 0) {
-                fprintf(candi2, "USER_NAME\tPASSWORD\n");
+                fprintf(candi2, "USER_NAME\tPASSWORD");
             }
 
             fseek(vot1, 0, SEEK_END);//this code is useto show default file header
             long size2 = ftell(vot1);
             if (size2 == 0) {
-                fprintf(vot1, "NAME\tID_NUM\tDOB\tG-mail\tZIP_CODE\t\tADDRESS\n");
+                fprintf(vot1, "NAME\tID_NUM\tDOB\tG-mail\tADDRESS");
             }
-
+            
         switch(Q){
                  
             case 1:
@@ -117,6 +117,9 @@ int main(){
                         scanf("%s",E);            
                         if(strlen(E)==12 ||strlen(E)==9){
                             valid=1;
+                            fprintf(candi1,"\n%s",W);
+                            fprintf(candi1,"\t%s",E);
+                        
                         }else{
                             continue;
                         }
@@ -129,12 +132,14 @@ int main(){
                     printf("\n\t\tYOUR G-mail        :");
                     scanf("%s",T);
 
+                    //show the valied parties
                     FILE *file;
                     char line[100];
+
                     char Word[100];
                     int Number = 0;
 
-                    file = fopen("P_Details.txt", "r");
+                    file = fopen("approv_party.txt", "r");
                     if (file == NULL) {
                         printf("Error opening file!\n");
                         
@@ -150,11 +155,11 @@ int main(){
                     }
                     
                     fclose(file);
-                    printf("\n\t\tYOUR PARTY     :");
+                    printf("\n\t\tENTER YOUR PARTY NUMBER     :");
                     scanf("%d",&Y);
 
                     switch(Y){
-                        case 1:
+                        case 1:{
                             FILE *party1;
                             party1=fopen("partyone.txt","a");
                             if (party1== NULL) {
@@ -164,47 +169,52 @@ int main(){
                             fprintf(party1,"%s",W);
                             fclose(party1);
                             break;
-                        case 2:
+                        }
+                        case 2:{
                             FILE *party2;
                             party2=fopen("partytwo.txt","a");
                             if (party2== NULL) {
                                 printf("Error opening file for writing!\n");
                                 return 1;
                             }
-                            fprintf(party1,"%s",W);
+                            fprintf(party2,"%s",W);
 
                             fclose(party2);
                             break;
-                        case 3:
+                        }
+                        case 3:{
                             FILE *party3;
                             party3=fopen("partythree.txt","a");
                             if (party3== NULL) {
                                 printf("Error opening file for writing!\n");
                                 return 1;
                             }
-                            fprintf(party1,"%s",W);
+                            fprintf(party3,"%s",W);
                             fclose(party3);
                             break;
-                        case 4:
+                        }
+                        case 4:{
                             FILE *party4;
                             party4=fopen("partyfour.txt","a");
                             if (party4== NULL) {
                                 printf("Error opening file for writing!\n");
                                 return 1;
                             }
-                            fprintf(party1,"%s",W);
+                            fprintf(party4,"%s",W);
                             fclose(party4);
                             break;
-                        case 5:
+                        }
+                        case 5:{
                             FILE *party5;
                             party5=fopen("partyfive.txt","a");
                             if (party5== NULL) {
                                 printf("Error opening file for writing!\n");
                                 return 1;
                             }
-                            fprintf(party1,"%s",W);
+                            fprintf(party5,"%s",W);
                             fclose(party5);
                             break;
+                        }
                         default:
                             printf("THIS is invalied number::");
                             break;
@@ -228,7 +238,7 @@ int main(){
 
                     int valid7=0;
                     for(;!valid7;){
-                        printf("\n\t\tENTER YOUR PARTY PASSWORD _________");
+                        printf("\n\t\tENTER YOUR  PASSWORD _________");
                         printf("\n\t\tinclude 8 Characters and Don't include a simbls.");
                         scanf("%s",J);            
                         if(strlen(J)==8){
@@ -247,8 +257,6 @@ int main(){
 
                     //store data in file
                     if(confirm==1){
-                        fprintf(candi1,"\n%s",W);
-                        fprintf(candi1,"\t%s",E);
                         fprintf(candi1,"\t%s",R);
                         fprintf(candi1,"\t%s",T);
                         fprintf(candi1,"\t%d",Y);
@@ -299,6 +307,8 @@ int main(){
                         }
                     }
                     printf("\n\t\tYour ID number is accepted: %s\n", G);
+                    fprintf(vot1,"\n%s",H);
+                    fprintf(vot1,"\t%s",G);
 
                     printf("\n\t\tYOUR DATE OF BIRTH(YYYY.MM.DD) :");
                     scanf("%s",F);
@@ -312,7 +322,6 @@ int main(){
                     len = strlen(Z);
                         if (len > 0 && Z[len - 1] == '\n')
                         Z[len - 1] = '\0';
-
                     do{
                         printf("\n\t\tUSERNAME___________");
                         printf("\n\t\tThis user name must be your ID_NUMBER\t:");
@@ -321,11 +330,11 @@ int main(){
 
                     int valid10=0;
                     for(;!valid10;){
-                        printf("\n\t\tENTER YOUR PARTY PASSWORD _________");
+                        printf("\n\t\tENTER YOUR PASSWORD _________");
                         printf("\n\t\tinclude 8 Characters and Don't include a simbls.");
                         scanf("%s",C);            
                         if(strlen(C)==8){
-                            valid10=1;
+                            valid10=1; 
                         }else{
                             continue;
                         }
@@ -340,25 +349,23 @@ int main(){
 
                     //store data in file
                     if(confirm==1){
-                        fprintf(vot1,"\n%s",H);
-                        fprintf(vot1,"\t%s",G);
                         fprintf(vot1,"\t%s",F);
                         fprintf(vot1,"\t%s",D);
-                        fprintf(vot1,"\t%s",Z);
                         fprintf(candi2,"\n%s",X);
                         fprintf(candi2,"\t%s",C);
                         printf("\n\t\tData Saved Successfully!\n");
                     }else if(confirm==3){
                         back=1;
                     }
-
+                    
                     printf("\t\t\t\t...........................................................\n\n");
 
                     printf("\t\t\t\t\t\tTHANK YOU FOR YOUR COOPARION !!!\n");
 
                     printf("\t\t\t\t...........................................................\n\n");
                 }while(confirm==2);//choose re enter data need to enter repeat 
-                if(back)break;            
+                if(back)break;
+                fprintf(vot1,"\t%s",Z);            
                 break;
 
             case 3:
@@ -478,11 +485,10 @@ int main(){
             fclose(party2);
 
         }
-
+        break;
     case 2:
         
         break;           
     }
-
 return 0;
 }
